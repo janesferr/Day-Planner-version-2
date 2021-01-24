@@ -5,7 +5,7 @@ body {
   }
   
   textarea{
-    background: transparent;
+    background: gray;
     border: none;
     resize: none;
     color: #000000;
@@ -45,7 +45,7 @@ body {
   }
   
   .past {
-    background-color: #d3d3d3;
+    background-color: gray;
     color: white;
   }
   

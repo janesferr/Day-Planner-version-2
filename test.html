@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header class="jumbotron">
+        <h1 class="display-3">Work Day Scheduler</h1>
+        <p class="lead">A simple calendar app for scheduling your work day</p>
+        <p id="currentDay" class="lead"></p>
+    </header>
+
+    <div class="container">
+        <!-- Timeblocks go here -->
+        <div class="row">
+            <div class="col-md-2 hour">9am</div>
+            <div class="col-md-9 description p-0"><textarea id="0" class="future"></textarea></div><button id="btn0"
+                class="col-md-1 saveBtn"><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2FBpEgh-exyIaaS3W_W2Z_CeY2Ww5gBML8Q&amp;usqp=CAU"
+                    alt="pic Save" width="15%" height="15%"></button>
+        </div>
+        <div class="row">
+            <div class="col-md-2 hour">10am</div>
+            <div class="col-md-9 description p-0"><textarea id="1" class="future"></textarea></div><button id="btn1"
+                class="col-md-1 saveBtn"><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2FBpEgh-exyIaaS3W_W2Z_CeY2Ww5gBML8Q&amp;usqp=CAU"
+                    alt="pic Save" width="15%" height="15%"></button>
+        </div>
+        <div class="row">
+            <div class="col-md-2 hour">11am</div>
+            <div class="col-md-9 description p-0"><textarea id="2" class="future"></textarea></div><button id="btn2"
+                class="col-md-1 saveBtn"><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2FBpEgh-exyIaaS3W_W2Z_CeY2Ww5gBML8Q&amp;usqp=CAU"
+                    alt="pic Save" width="15%" height="15%"></button>
+        </div>
+        <div class="row">
+            <div class="col-md-2 hour">12pm</div>
+            <div class="col-md-9 description p-0"><textarea id="3" class="future"></textarea></div><button id="btn3"
+                class="col-md-1 saveBtn"><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2FBpEgh-exyIaaS3W_W2Z_CeY2Ww5gBML8Q&amp;usqp=CAU"
+                    alt="pic Save" width="15%" height="15%"></button>
+        </div>
+        <div class="row">
+            <div class="col-md-2 hour">1pm</div>
+            <div class="col-md-9 description p-0"><textarea id="4" class="future"></textarea></div><button id="btn4"
+                class="col-md-1 saveBtn"><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2FBpEgh-exyIaaS3W_W2Z_CeY2Ww5gBML8Q&amp;usqp=CAU"
+                    alt="pic Save" width="15%" height="15%"></button>
+        </div>
+        <div class="row">
+            <div class="col-md-2 hour">2pm</div>
+            <div class="col-md-9 description p-0"><textarea id="5" class="future"></textarea></div><button id="btn5"
+                class="col-md-1 saveBtn"><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2FBpEgh-exyIaaS3W_W2Z_CeY2Ww5gBML8Q&amp;usqp=CAU"
+                    alt="pic Save" width="15%" height="15%"></button>
+        </div>
+        <div class="row">
+            <div class="col-md-2 hour">3pm</div>
+            <div class="col-md-9 description p-0"><textarea id="6" class="future"></textarea></div><button id="btn6"
+                class="col-md-1 saveBtn"><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2FBpEgh-exyIaaS3W_W2Z_CeY2Ww5gBML8Q&amp;usqp=CAU"
+                    alt="pic Save" width="15%" height="15%"></button>
+        </div>
+        <div class="row">
+            <div class="col-md-2 hour">4pm</div>
+            <div class="col-md-9 description p-0"><textarea id="7" class="future"></textarea></div><button id="btn7"
+                class="col-md-1 saveBtn"><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2FBpEgh-exyIaaS3W_W2Z_CeY2Ww5gBML8Q&amp;usqp=CAU"
+                    alt="pic Save" width="15%" height="15%"></button>
+        </div>
+        <div class="row">
+            <div class="col-md-2 hour">5pm</div>
+            <div class="col-md-9 description p-0"><textarea id="8" class="future"></textarea></div><button id="btn8"
+                class="col-md-1 saveBtn"><img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2FBpEgh-exyIaaS3W_W2Z_CeY2Ww5gBML8Q&amp;usqp=CAU"
+                    alt="pic Save" width="15%" height="15%"></button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script>
+
+        // this is the key name for the schedules to be stored in localStorage
+        var scheduleStorageKeyName = 'schedules';
+       
+       // load in our schedules from storage
+       function loadScheduleFromStorage() {
+           var schedules = JSON.parse(localStorage.getItem(scheduleStorageKeyName));
+           if (schedules !== null) {
+               console.log('Hey, i found schedules in localStorage, and it\'s value is', schedules);
+               schedules.forEach((schedule, index) => {
+                   var text = schedule.appt;
+                   $(`#${index}`).val(text);
+               });
+           }
+       };
+       
+       // save all schedules at once.
+       var saveSchedules = (ev) => {
+            var schedules = [
+                {
+                    appt: $('#0').val()
+                },
+                {
+                    appt: $('#1').val()
+                },
+                {
+                    appt: $('#2').val()
+                },
+                {
+                    appt: $('#3').val()
+                },
+                {
+                    appt: $('#4').val()
+                },
+                {
+                    appt: $('#5').val()
+                },
+                {
+                    appt: $('#6').val()
+                },
+                {
+                    appt: $('#7').val()
+                },
+                {
+                    appt: $('#8').val()
+                },
+            ]
+
+            // for debug purposes only
+            console.log("added" + schedules);
+            console.log("added" + JSON.stringify(schedules));
+            
+            // saving to localStorage
+            localStorage.setItem(scheduleStorageKeyName, JSON.stringify(schedules));
+        };
+
+        var currentDate = moment().format("dddd, MMMM Do YYYY, h:mm:ss a")
+        $("#currentDay").text(currentDate);
+
+        // when the DOM's been loaded, let's add saveSchedules as the click event to all
+        // the buttons as well as load in any schedules we find in localStorage.
+        $(document).ready(() => {
+            var buttons = [...document.getElementsByTagName('button')];
+            buttons.forEach(button => {
+                button.addEventListener('click', saveSchedules);    
+            });
+
+            loadScheduleFromStorage();
+        });
+    </script>
+</body>
+</html>
