@@ -103,6 +103,44 @@
                });
            }
        };
+
+       // update the current time on the page
+       // and color the schedules
+       function drawSchedule() {
+           var currentDate = moment().format("dddd, MMMM Do YYYY, h:mm:ss a")
+           $("#currentDay").text(currentDate);
+
+           var currenthour = parseInt(moment().format("HH"));
+           // for testing
+           //var currenthour = 13;
+           var textareas = [...document.getElementsByTagName('textarea')];
+
+           // [0 + 9 = 9, 1 + 9 = 10, 2 + 9 = 11]
+           // all of the text area's are id's number starting from 0, with the
+           // first schedule being 0900 (9AM). With the current hour, id's offset
+           // with 9 which are less are in the past, equal to current and greater
+           // than in the future. Add and remove time coloring classes based on
+           // this.
+           textareas.forEach(textarea => {
+               var id = textarea.getAttribute('id');
+               var timeslot = parseInt(id) + 9;
+               if (timeslot < currenthour) {
+                   console.log('timeslot is in the past', timeslot, currenthour);
+                   $(`#${id}`).removeClass('future present');
+                   $(`#${id}`).addClass('past');
+               }
+               if (timeslot === currenthour) {
+                   console.log('timeslot is in the present', timeslot, currenthour);
+                   $(`#${id}`).removeClass('past future');
+                   $(`#${id}`).addClass('present');
+               }
+               if (timeslot > currenthour) {
+                   console.log('timeslot is in the future', timeslot, currenthour);
+                   $(`#${id}`).removeClass('past present');
+                   $(`#${id}`).addClass('future');
+               }
+            });
+       };
        
        // save all schedules at once.
        var saveSchedules = (ev) => {
@@ -113,7 +151,7 @@
                 {
                     appt: $('#1').val()
                 },
-                {
+                {   
                     appt: $('#2').val()
                 },
                 {
@@ -134,7 +172,7 @@
                 {
                     appt: $('#8').val()
                 },
-            ]
+            ];
 
             // for debug purposes only
             console.log("added" + schedules);
@@ -142,19 +180,20 @@
             
             // saving to localStorage
             localStorage.setItem(scheduleStorageKeyName, JSON.stringify(schedules));
+            console.log(scheduleStorageKeyName);
         };
-
-        var currentDate = moment().format("dddd, MMMM Do YYYY, h:mm:ss a")
-        $("#currentDay").text(currentDate);
-
+    
         // when the DOM's been loaded, let's add saveSchedules as the click event to all
         // the buttons as well as load in any schedules we find in localStorage.
         $(document).ready(() => {
+
+            // add the event listener to the schedule buttons
             var buttons = [...document.getElementsByTagName('button')];
             buttons.forEach(button => {
                 button.addEventListener('click', saveSchedules);    
             });
 
+            drawSchedule();
             loadScheduleFromStorage();
         });
     </script>
