@@ -2,3 +2,5 @@ This website is created with JQuery using a Local Storage tools. It saves your s
 
 
 Here is the deployed link through github: https://janesferr.github.io/Day-Planner-version-2/
+
+![the website screenshot of About me page](WorkDayScheduleerpic.png?raw=true "Screenshot of workday schedule")
